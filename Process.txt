@@ -1,5 +1,0 @@
-1. Create react app with TypeScript - npx create-react-app . --template typescript
-2. Install ChakraUI as CSS library - npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^5
-3. Install react router dom library
-4. Import router in index.tsx
-5. Install Axios - API call
