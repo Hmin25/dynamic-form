@@ -183,7 +183,6 @@ function App() {
       dataObject
     )
       .then((res) => {
-        console.log(res.data);
         setPostMessage(res.data.message);
         setSubmitStatus(true);
       })
