@@ -12,6 +12,7 @@ import {
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import "./App.css";
+import { setConstantValue } from "typescript";
 
 function App() {
   const [allData, setAllData] = useState<[]>();
@@ -20,6 +21,8 @@ function App() {
   const [submitStatus, setSubmitStatus] = useState(false);
   const [dataObject, setDataObject] = useState({});
   const [arrayToDisplay, setArrayToDisplay] = useState();
+
+  const [value, setValue] = useState();
 
   useEffect(() => {
     async function getFormData() {
@@ -110,17 +113,18 @@ function App() {
                 <Text>{data.fieldName}:</Text>
                 <RadioGroup
                   onChange={(e: any) => {
+                    setValue(e);
                     let newObject: any = {};
-                    newObject[data.fieldName] = e.target.value;
+                    newObject[data.fieldName] = e;
                     temporaryObject = { ...temporaryObject, ...newObject };
                     setDataObject(temporaryObject)
                   }}
                   defaultValue={data.value}
                 >
                   <Stack direction="row">
-                    <Radio value={data.options[0]}>{data.options[0]}</Radio>
-                    <Radio value={data.options[1]}>{data.options[1]}</Radio>
-                    <Radio value={data.options[2]}>{data.options[2]}</Radio>
+                    <Radio value={data.options[0]} >{data.options[0]}</Radio>
+                    <Radio value={data.options[1]} >{data.options[1]}</Radio>
+                    <Radio value={data.options[2]} >{data.options[2]}</Radio>
                   </Stack>
                 </RadioGroup>
               </HStack>
@@ -138,6 +142,7 @@ function App() {
                     let newObject: any = {};
                     newObject[data.fieldName] = e.target.value;
                     temporaryObject = { ...temporaryObject, ...newObject };
+                    setDataObject(temporaryObject)
                   }}
                 />
               </HStack>
@@ -173,6 +178,7 @@ function App() {
 
 
   async function postFormData() {
+    console.log(dataObject)
     await Axios.post(
       `https://ulventech-react-exam.netlify.app/api/form`,
       dataObject
