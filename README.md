@@ -8,3 +8,7 @@ Instructions to setup project
 6. Done.
 
 *Deployed project: https://hungry-haibt-2e7832.netlify.app/
+
+#Languages: ReactJs, HTML
+#CSS library: ChakraUI
+#State Management solution: React Hooks (useState, useEffect)
