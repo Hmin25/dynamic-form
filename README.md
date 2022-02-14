@@ -6,3 +6,5 @@ Instructions to setup project
 4. In terminal, run installation of all required packages : run "npm i"
 5. After installing the packages, can run the project : "npm start" in the terminal.
 6. Done.
+
+*Deployed project: https://hungry-haibt-2e7832.netlify.app/
