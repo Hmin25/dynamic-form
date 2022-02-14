@@ -178,7 +178,6 @@ function App() {
 
 
   async function postFormData() {
-    console.log(dataObject)
     await Axios.post(
       `https://ulventech-react-exam.netlify.app/api/form`,
       dataObject
